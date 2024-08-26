@@ -150,6 +150,7 @@ body {
 
 .main {
 	flex: 1;
+	margin-bottom: 0.5rem;
 }
 
 .main img {
@@ -165,8 +166,14 @@ h2 {
 	font-style: italic;
 }
 
+h3 {
+	font-size: 1.5rem;
+	margin-bottom: 0.25rem;
+	font-family: "cc-pixel-arcade-joystick", serif;
+}
+
 p {
-	font-size: 1.2rem;
+	font-size: 1.1rem;
 }
 
 
