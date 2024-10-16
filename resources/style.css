@@ -19,6 +19,7 @@ body {
     margin: 0 25%;
 }
 
+/******************************************************************************************************************************************************************************************************
 /* header */
 
 header {
@@ -45,7 +46,7 @@ h1 {
 }
 
 h1 a {
-    color: #2c3e50;
+    color: #957b95;
     text-decoration: none;
 }
 
@@ -55,7 +56,7 @@ h2 {
 }
 
 nav a {
-    color:#2c3e50;
+    color:#fbb3b3;
     text-decoration: none;
 }
 
@@ -80,12 +81,16 @@ nav a {
     flex-direction: row;
 }
 
+.about #art {
+    flex: 1;
+}
+
 .about #art q {
     font-style: italic;
     font-size: 0.9rem;
 }
 
-.about img {
+.about #art img {
     height: 500px;
 }
 
@@ -131,6 +136,40 @@ p {
     font-size: 1.5rem;
 }
 
+/******************************************************************************************************************************************************************************************************
+/*queries*/
+
+@media screen and (max-width: 1675px) {
+    h3 {
+        font-size: 2rem;
+    }
+    .about #art img {
+        height: 250px;
+    }
+    .about #flex p {
+        font-size: 1rem;
+    }
+} /* small screen */
+
+@media screen and (max-width: 950px) {
+    h3 {
+        font-size: 1.5rem;
+    }
+    .about #art img {
+        height: 150px;
+    }
+    .about #art q {
+        font-size: 0.5rem;
+    }
+    .about #flex p {
+        font-size: 0.75rem;
+    }
+    .projects ul {
+        font-size: 1rem;
+    }
+} /* smaller screen */
+
+/******************************************************************************************************************************************************************************************************
 /* footer */
 footer {
     padding: 2rem;
