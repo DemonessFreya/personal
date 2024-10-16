@@ -25,10 +25,11 @@ header {
     position: fixed;
     top: 0;
     left: 0;
-    width: 100%;
+    width: 50%;
     height: 6.0625rem;
-    background-color: #8e2de2;
-    box-shadow: 0 0 5px 0 #000000FA;
+    margin: 0 25% 0 25%;
+    background-color: #17141a;
+    box-shadow: 0 0 5px 0 #9300ff7d;
 }
 
 .header {
@@ -97,10 +98,22 @@ nav a {
     color: #2c3e50;
 }
 
+.contact {
+    margin: 2rem 0;
+}
+
 .contact ul {
     list-style: square;
     font-size: 1.5rem;
     margin-left: 1.5rem;
+}
+
+.contact li {
+    margin: 0.25rem 0;
+}
+
+.contact ul a {
+    color: #2c3e50;
 }
 
 h3 {
