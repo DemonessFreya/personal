@@ -80,6 +80,11 @@ nav a {
     flex-direction: row;
 }
 
+.about #art q {
+    font-style: italic;
+    font-size: 0.9rem;
+}
+
 .about img {
     height: 500px;
 }
