@@ -152,6 +152,12 @@ p {
 } /* small screen */
 
 @media screen and (max-width: 950px) {
+    body {
+        margin: 0 10%;
+    }
+    header {
+        margin: 0 10% 0 10%;
+    }
     h3 {
         font-size: 1.5rem;
     }
