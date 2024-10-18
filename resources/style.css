@@ -153,6 +153,7 @@ p {
 
 @media screen and (max-width: 950px) {
     body {
+        width: 90%;
         margin: 0 10%;
     }
     header {
