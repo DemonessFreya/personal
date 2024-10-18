@@ -153,10 +153,10 @@ p {
 
 @media screen and (max-width: 950px) {
     body {
-        width: 90%;
         margin: 0 10%;
     }
     header {
+        width: 90%;
         margin: 0 10% 0 10%;
     }
     h3 {
