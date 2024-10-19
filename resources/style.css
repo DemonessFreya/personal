@@ -150,6 +150,9 @@ p {
 /*queries*/
 
 @media screen and (max-width: 1675px) {
+    body {
+        margin: 0 20%;
+    }
     h3 {
         font-size: 2rem;
     }
@@ -161,11 +164,14 @@ p {
         height: 250px;
     }
     .about #flex p {
-        font-size: 1rem;
+        font-size: 1.5rem;
     }
 } /* small screen */
 
 @media screen and (max-width: 950px) {
+    body {
+        margin: 0 10%;
+    }
     h1 {
         font-size: 1.5rem;
     }
