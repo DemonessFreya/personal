@@ -1,5 +1,7 @@
 /* 
 gold #f39c12
+
+linear-gradient();
 */
 
 
@@ -188,6 +190,9 @@ p {
         font-size: 0.75rem;
     }
     .projects ul {
+        font-size: 0.8rem;
+    }
+    .contact li {
         font-size: 0.8rem;
     }
 } /* smaller screen */
