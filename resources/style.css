@@ -148,6 +148,10 @@ p {
     font-size: 1.75rem;
 }
 
+li {
+    font-family: "Iceland", Arial, Helvetica, sans-serif;
+}
+
 /******************************************************************************************************************************************************************************************************
 /*grid*/
 
@@ -157,6 +161,11 @@ p {
     display: grid;
     grid-template-areas: "a a" "b c";
     gap: 10px;
+}
+
+.grid li {
+    text-align: center;
+    font-size: 3rem;
 }
 
 .a {
