@@ -141,12 +141,76 @@ h3 {
     margin: 0.5rem 0.5rem 0.5rem 0;
 }
 
+h3 a {
+    color: #f5ebe0;
+    text-decoration: none;
+    transition: transform 0.3s ease;
+    -webkit-transition: transform 0.3s ease;
+    display: inline-block;
+}
+
+h3 a:hover {
+    transform: scale(1.2);
+    -webkit-transform: scale(1.2);
+}
+
 p {
     font-family: "Iceland", sans-serif;
     font-weight: 400;
     font-style: normal;
     font-size: 1.75rem;
 }
+
+li {
+    font-family: "Iceland", Arial, Helvetica, sans-serif;
+}
+
+/******************************************************************************************************************************************************************************************************
+/*grid*/
+
+.grid {
+    margin: 2rem 0;
+}
+
+.container {
+    position: relative;
+    height: 800px;
+    width: 100%;
+    margin: auto;
+    display: grid;
+    grid-template-areas: "a b" "c b" "c d" "c e";
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr 1fr 2fr 2fr;
+    gap: 10px;
+}
+
+.grid li {
+    text-align: center;
+    font-size: 3rem;
+    border: 3px solid #776481;
+    background-color: #2f2f2f;
+}
+
+.a {
+    grid-area: a;
+}
+
+.b {
+    grid-area: b;
+}
+
+.c {
+    grid-area: c;
+}
+
+.d {
+    grid-area: d;
+}
+
+.e {
+    grid-area: e;
+}
+
 
 /******************************************************************************************************************************************************************************************************
 /*queries*/
@@ -167,6 +231,9 @@ p {
     }
     .about #flex p {
         font-size: 1.5rem;
+    }
+    footer nav p {
+        font-size: 1.75rem;
     }
 } /* small screen */
 
@@ -207,6 +274,10 @@ footer {
 
 footer nav {
     text-align: center;
+}
+
+footer nav p {
+    font-size: 2.5rem;
 }
 
 footer #blue {
