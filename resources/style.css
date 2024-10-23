@@ -232,6 +232,9 @@ li {
     .about #flex p {
         font-size: 1.5rem;
     }
+    footer nav p {
+        font-size: 1.75rem;
+    }
 } /* small screen */
 
 @media screen and (max-width: 950px) {
@@ -271,6 +274,10 @@ footer {
 
 footer nav {
     text-align: center;
+}
+
+footer nav p {
+    font-size: 2.5rem;
 }
 
 footer #blue {
