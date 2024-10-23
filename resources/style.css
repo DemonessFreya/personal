@@ -168,13 +168,19 @@ li {
 /******************************************************************************************************************************************************************************************************
 /*grid*/
 
+.grid {
+    margin: 2rem 0;
+}
+
 .container {
     position: relative;
-    height: 500px;
+    height: 800px;
     width: 100%;
     margin: auto;
     display: grid;
-    grid-template-areas: "a a" "b c";
+    grid-template-areas: "a b" "c b" "c d" "c e";
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr 1fr 2fr 2fr;
     gap: 10px;
 }
 
@@ -195,6 +201,14 @@ li {
 
 .c {
     grid-area: c;
+}
+
+.d {
+    grid-area: d;
+}
+
+.e {
+    grid-area: e;
 }
 
 
