@@ -141,6 +141,19 @@ h3 {
     margin: 0.5rem 0.5rem 0.5rem 0;
 }
 
+h3 a {
+    color: #f5ebe0;
+    text-decoration: none;
+    transition: transform 0.3s ease;
+    -webkit-transition: transform 0.3s ease;
+    display: inline-block;
+}
+
+h3 a:hover {
+    transform: scale(1.2);
+    -webkit-transform: scale(1.2);
+}
+
 p {
     font-family: "Iceland", sans-serif;
     font-weight: 400;
