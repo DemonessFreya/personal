@@ -265,6 +265,9 @@ li {
     .projects ul {
         font-size: 0.8rem;
     }
+    .projects #backpack {
+        height: 175px;
+    }
     .contact li {
         font-size: 0.8rem;
     }
