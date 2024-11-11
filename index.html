@@ -18,6 +18,12 @@
 		<link href="https://fonts.googleapis.com/css2?family=DotGothic16&family=Rampart+One&display=swap" rel="stylesheet">
 		<!---------------------------------------------------------------------------------------------------------------->
 		<link href="resources/freyja_by_nissa.png" rel="icon" type="image/x-icon">
+
+		<!-- AOS Library CSS -->
+		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css" />
+
+		<!-- AOS Library JavaScript -->
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
 	</head>
 	
 	<body>
@@ -31,7 +37,7 @@
 		</header>
 
 		<div class="content">
-			<div class="about">
+			<div class="about" data-aos="zoom-in">
 				<h3>About Me</h3>
 				<div id="flex">
 					<p>Hello! I'm Freyja, a programmer and VA recently graduated from high school. I primarily work with C++ and have been learning and working with OpenGL. I first started programming with web design using HTML and CSS, as well as JavaScript. I also have experience in Python and have used the pygame package for my senior year major work.</p>
@@ -42,7 +48,7 @@
 				</div>
 			</div>
 
-			<div class="projects">
+			<div class="projects" data-aos="zoom-in">
 				<h3><a href="pages/grid.html">Projects</a></h3>
 				<ul>
 					<li><a href="https://www.github.com/DemonessFreya/mixed-messages"><h4>Random message node project</h4></a></li>
@@ -58,5 +64,12 @@
 				<p><span id="blue">T</span><span id="pink">r</span><span id="white">a</span><span id="pink">n</span><span id="blue">s</span> <span>R</span><span>i</span><span>g</span><span>h</span><span>t</span><span>s</span></p>
 			</nav>
 		</footer>
+
+		<script>
+			AOS.init({
+				duration: 1000, // Animation duration in milliseconds
+				once: false // Animation occurs only once while scrolling
+			});
+		</script>		  
 	</body>
 </html>
