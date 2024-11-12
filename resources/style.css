@@ -138,9 +138,8 @@ body {
         opacity: 1;
         transform: translateY(0);  /* Start at normal position */
     }
-    50% {
-        opacity: 0.5;
-        transform: translateY(10vh); /* Move a little up during the fade */
+    10% {
+        opacity: 0;
     }
     100% {
         opacity: 0;
@@ -153,7 +152,6 @@ body {
 .fade-out-section.is-hidden {
     animation: fadeOutMoveUp 0.6s ease-out forwards;  /* Trigger fade-out and move up */
 }
-
 
 
 
