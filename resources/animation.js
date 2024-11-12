@@ -18,34 +18,37 @@
 
 document.addEventListener("DOMContentLoaded", function () {
     const fadeInSections = document.querySelectorAll('.fade-in-section');
+    const fadeOutSections = document.querySelectorAll('.fade-out-section');
 
     // Observer for fading in
     const fadeInObserver = new IntersectionObserver(entries => {
         entries.forEach(entry => {
             if (entry.isIntersecting) {
-                entry.target.classList.add('is-visible');  // Apply fade-in
-                //entry.target.classList.remove('is-hidden'); // Remove fade-out
+                entry.target.classList.add('is-visible'); 
             } else {
-                entry.target.classList.remove('is-visible');   // Apply fade-out
+                entry.target.classList.remove('is-visible');
             }
         });
-    }, { threshold: 0.4 }); // Trigger when 10% is visible
+    }, { threshold: 0.6 });
 
-    // Observer for fading out
+    // Observer for fading out (with delay to allow for smooth transition)
     const fadeOutObserver = new IntersectionObserver(entries => {
         entries.forEach(entry => {
             if (!entry.isIntersecting) {
-                entry.target.classList.add('is-hidden');   // Apply fade-out
-                //entry.target.classList.remove('is-visible'); // Remove fade-in
+                entry.target.classList.add('is-hidden'); 
             } else {
-                entry.target.classList.remove('is-hidden');   // Apply fade-out
+                entry.target.classList.remove('is-hidden'); 
             }
         });
-    }, { threshold: 0.4 }); // Trigger when 10% is not visible
+    }, { threshold: 0.6 });
 
-    // Apply both observers to each fade-in section
+    // Apply fade-in observer to fade-in sections
     fadeInSections.forEach(section => {
         fadeInObserver.observe(section);
+    });
+
+    // Apply fade-out observer to fade-out sections
+    fadeOutSections.forEach(section => {
         fadeOutObserver.observe(section);
     });
 });

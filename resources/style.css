@@ -40,11 +40,19 @@ body {
     visibility: visible;
 }
 
-.fade-in-section.is-hidden {
-    opacity: 0;
-    transform: translateY(10vh); /* Optional: slight downward movement */
-    visibility: hidden;
+/* Initial state for fade-out sections */
+.fade-out-section {
+    opacity: 1;
+    visibility: visible;
     transition: opacity 0.6s ease-out, transform 1.2s ease-out;
+    will-change: opacity, transform;
+}
+
+/* State when the section is not visible (fades out and moves down) */
+.fade-out-section.is-hidden {
+    opacity: 0;
+    transform: none;
+    /*visibility: hidden;*/
 }
 
 
