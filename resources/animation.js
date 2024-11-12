@@ -1,3 +1,4 @@
+// Scroll animation
 document.addEventListener("DOMContentLoaded", function () {
     const fadeInSections = document.querySelectorAll('.fade-in-section');
     const observer = new IntersectionObserver(entries => {
@@ -14,7 +15,7 @@ document.addEventListener("DOMContentLoaded", function () {
     });
 });
 
-
+// Initialise AOS
 AOS.init({
     duration: 1500,
     offset: 500,
@@ -37,6 +38,7 @@ updateAOS();
 // Run on resize
 window.addEventListener('resize', updateAOS);
 
+// Ensure start at top of page
 if ('scrollRestoration' in history) {
     history.scrollRestoration = 'manual';
 }
