@@ -16,7 +16,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
 
 AOS.init({
-    duration: 3000,
+    duration: 1500,
     offset: 500,
     once: true
 });
@@ -36,3 +36,7 @@ updateAOS();
 
 // Run on resize
 window.addEventListener('resize', updateAOS);
+
+if ('scrollRestoration' in history) {
+    history.scrollRestoration = 'manual';
+}

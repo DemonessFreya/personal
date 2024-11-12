@@ -102,7 +102,7 @@ nav a {
 
 .about, .projects {
     margin: 2rem 0;
-    height: 100vh;
+    height: 90vh;
     display: grid;
     align-content: center;
 }
