@@ -1,28 +1,30 @@
-// Scroll animation
+// scroll animation
 document.addEventListener("DOMContentLoaded", function () {
     const fadeInSections = document.querySelectorAll('.fade-in-section');
     const observer = new IntersectionObserver(entries => {
         entries.forEach(entry => {
             if (entry.isIntersecting) {
-                entry.target.classList.add('is-visible');
-                observer.unobserve(entry.target); // Stop observing once it’s visible
+                entry.target.classList.add('is-visible'); // Fade in
+            } else {
+                entry.target.classList.remove('is-visible'); // Fade out
             }
         });
-    });
+    }, { threshold: 0.1 }); // Adjust threshold as needed
 
     fadeInSections.forEach(section => {
         observer.observe(section);
     });
 });
 
-// Initialise AOS
+
+// initialise AOS
 AOS.init({
     duration: 1500,
     offset: 500,
     once: true
 });
 
-// Function to remove data-aos on smaller screens
+// function to remove data-aos on smaller screens
 function updateAOS() {
     const elements = document.querySelectorAll('[data-aos="flip-down"]');
     if (window.innerWidth <= 950) { // Change this width to match your media query
@@ -32,13 +34,13 @@ function updateAOS() {
     }
 }
 
-// Run on page load
+// run on page load
 updateAOS();
 
-// Run on resize
+// run on resize
 window.addEventListener('resize', updateAOS);
 
-// Ensure start at top of page
+// ensure start at top of page
 if ('scrollRestoration' in history) {
     history.scrollRestoration = 'manual';
 }
