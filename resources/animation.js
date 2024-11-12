@@ -16,7 +16,23 @@ document.addEventListener("DOMContentLoaded", function () {
 
 
 AOS.init({
-    duration: 1000,
+    duration: 3000,
     offset: 500,
     once: true
 });
+
+// Function to remove data-aos on smaller screens
+function updateAOS() {
+    const elements = document.querySelectorAll('[data-aos="flip-down"]');
+    if (window.innerWidth <= 950) { // Change this width to match your media query
+        elements.forEach(element => element.removeAttribute('data-aos'));
+    } else {
+        elements.forEach(element => element.setAttribute('data-aos', 'flip-down'));
+    }
+}
+
+// Run on page load
+updateAOS();
+
+// Run on resize
+window.addEventListener('resize', updateAOS);
