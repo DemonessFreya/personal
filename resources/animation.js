@@ -1,60 +1,46 @@
 // scroll animation
-/*document.addEventListener("DOMContentLoaded", function () {
-    const fadeInSections = document.querySelectorAll('.fade-in-section');
-    const observer = new IntersectionObserver(entries => {
-        entries.forEach(entry => {
-            if (entry.isIntersecting) {
-                entry.target.classList.add('is-visible');
-            } else {
-                entry.target.classList.remove('is-visible');
-            }
-        });
-    }, { threshold: 0.1 }); // Adjust threshold as needed
-
-    fadeInSections.forEach(section => {
-        observer.observe(section);
-    });
-});*/
-
 document.addEventListener("DOMContentLoaded", function () {
     const fadeInSections = document.querySelectorAll('.fade-in-section');
     const fadeOutSections = document.querySelectorAll('.fade-out-section');
 
-    // Observer for fading in
-    const fadeInObserver = new IntersectionObserver(entries => {
+    // observer for fading in and out
+    const fadeInOutObserver = new IntersectionObserver(entries => {
         entries.forEach(entry => {
             if (entry.isIntersecting) {
-                entry.target.classList.add('is-visible'); 
+                // apply fade-in animation for entering the viewport
+                entry.target.classList.add('is-visible');
+                entry.target.classList.remove('is-hidden'); // remove 'is-hidden' if the element is in view
             } else {
+                // determine if the element is leaving from the top or bottom
+                const isLeavingTop = entry.boundingClientRect.top < 0;  // element is leaving from the top
+                const isLeavingBottom = entry.boundingClientRect.bottom > window.innerHeight; // leaving from the bottom
+
+                if (isLeavingTop) {
+                    // if leaving from the top, apply "move up" behavior
+                    entry.target.classList.remove('fade-out-from-bottom'); 
+                    entry.target.classList.add('fade-out-from-top');
+                } else if (isLeavingBottom) {
+                    // if leaving from the bottom, apply "move down" behavior
+                    entry.target.classList.remove('fade-out-from-top'); 
+                    entry.target.classList.add('fade-out-from-bottom');
+                }
+
+                // apply fade-out and hide
+                entry.target.classList.add('is-hidden');
                 entry.target.classList.remove('is-visible');
             }
         });
     }, { threshold: 0.4 });
 
-    // Observer for fading out (with delay to allow for smooth transition)
-    const fadeOutObserver = new IntersectionObserver(entries => {
-        entries.forEach(entry => {
-            if (!entry.isIntersecting) {
-                entry.target.classList.add('is-hidden'); 
-            } else {
-                entry.target.classList.remove('is-hidden'); 
-            }
-        });
-    }, { threshold: 0.4 });
-
-    // Apply fade-in observer to fade-in sections
+    // Observe both fade-in and fade-out sections
     fadeInSections.forEach(section => {
-        fadeInObserver.observe(section);
+        fadeInOutObserver.observe(section);
     });
 
-    // Apply fade-out observer to fade-out sections
     fadeOutSections.forEach(section => {
-        fadeOutObserver.observe(section);
+        fadeInOutObserver.observe(section);
     });
 });
-
-
-
 
 // initialise AOS
 AOS.init({
