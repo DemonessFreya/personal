@@ -1,26 +1,22 @@
-import React from 'react';
-
-function FadeInSection(props) {
-    const [isVisible, setVisible] = React.useState(true);
-    const domRef = React.useRef();
-    React.useEffect(() => {
-        const observer = new IntersectionObserver(entries => {
-        entries.forEach(entry => setVisible(entry.isIntersecting));
+document.addEventListener("DOMContentLoaded", function () {
+    const fadeInSections = document.querySelectorAll('.fade-in-section');
+    const observer = new IntersectionObserver(entries => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add('is-visible');
+                observer.unobserve(entry.target); // Stop observing once it’s visible
+            }
         });
-        observer.observe(domRef.current);
-        return () => observer.unobserve(domRef.current);
-    }, []);
-    return (
-        <div
-        className={`fade-in-section ${isVisible ? 'is-visible' : ''}`}
-        ref={domRef}
-        >
-        {props.children}
-        </div>
-    );
-}
+    });
 
-/*AOS.init({
+    fadeInSections.forEach(section => {
+        observer.observe(section);
+    });
+});
+
+
+AOS.init({
     duration: 1000,
-    offset: 500
-});*/
+    offset: 500,
+    once: true
+});
