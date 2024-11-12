@@ -1,12 +1,12 @@
 // scroll animation
-document.addEventListener("DOMContentLoaded", function () {
+/*document.addEventListener("DOMContentLoaded", function () {
     const fadeInSections = document.querySelectorAll('.fade-in-section');
     const observer = new IntersectionObserver(entries => {
         entries.forEach(entry => {
             if (entry.isIntersecting) {
-                entry.target.classList.add('is-visible'); // Fade in
+                entry.target.classList.add('is-visible');
             } else {
-                entry.target.classList.remove('is-visible'); // Fade out
+                entry.target.classList.remove('is-visible');
             }
         });
     }, { threshold: 0.1 }); // Adjust threshold as needed
@@ -14,7 +14,42 @@ document.addEventListener("DOMContentLoaded", function () {
     fadeInSections.forEach(section => {
         observer.observe(section);
     });
+});*/
+
+document.addEventListener("DOMContentLoaded", function () {
+    const fadeInSections = document.querySelectorAll('.fade-in-section');
+
+    // Observer for fading in
+    const fadeInObserver = new IntersectionObserver(entries => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add('is-visible');  // Apply fade-in
+                //entry.target.classList.remove('is-hidden'); // Remove fade-out
+            } else {
+                entry.target.classList.remove('is-visible');   // Apply fade-out
+            }
+        });
+    }, { threshold: 0.4 }); // Trigger when 10% is visible
+
+    // Observer for fading out
+    const fadeOutObserver = new IntersectionObserver(entries => {
+        entries.forEach(entry => {
+            if (!entry.isIntersecting) {
+                entry.target.classList.add('is-hidden');   // Apply fade-out
+                //entry.target.classList.remove('is-visible'); // Remove fade-in
+            } else {
+                entry.target.classList.remove('is-hidden');   // Apply fade-out
+            }
+        });
+    }, { threshold: 0.4 }); // Trigger when 10% is not visible
+
+    // Apply both observers to each fade-in section
+    fadeInSections.forEach(section => {
+        fadeInObserver.observe(section);
+        fadeOutObserver.observe(section);
+    });
 });
+
 
 
 // initialise AOS
