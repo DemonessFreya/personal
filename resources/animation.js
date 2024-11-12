@@ -29,7 +29,7 @@ document.addEventListener("DOMContentLoaded", function () {
                 entry.target.classList.remove('is-visible');
             }
         });
-    }, { threshold: 0.6 });
+    }, { threshold: 0.4 });
 
     // Observer for fading out (with delay to allow for smooth transition)
     const fadeOutObserver = new IntersectionObserver(entries => {
@@ -40,7 +40,7 @@ document.addEventListener("DOMContentLoaded", function () {
                 entry.target.classList.remove('is-hidden'); 
             }
         });
-    }, { threshold: 0.6 });
+    }, { threshold: 0.4 });
 
     // Apply fade-in observer to fade-in sections
     fadeInSections.forEach(section => {
@@ -52,6 +52,7 @@ document.addEventListener("DOMContentLoaded", function () {
         fadeOutObserver.observe(section);
     });
 });
+
 
 
 

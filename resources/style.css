@@ -26,7 +26,7 @@ body {
 /******************************************************************************************************************************************************************************************************
 /* animations */
 
-.fade-in-section {
+/*.fade-in-section {
     opacity: 0;
     transform: translateY(20vh);
     visibility: hidden;
@@ -40,20 +40,120 @@ body {
     visibility: visible;
 }
 
-/* Initial state for fade-out sections */
-.fade-out-section {
-    opacity: 1;
-    visibility: visible;
-    transition: opacity 0.6s ease-out, transform 1.2s ease-out;
+.fade-in-section.is-hidden {
+    opacity: 0;
+    transform: none;
+    visibility: hidden;
+    transition: opacity 0.6s ease-out;
+}*/
+/* Initial state for fade-in sections */
+/* Initial state for fade-in sections */
+
+/*
+.fade-in-section {
+    opacity: 0;
+    transform: translateY(20vh);
+    visibility: hidden;
     will-change: opacity, transform;
 }
 
-/* State when the section is not visible (fades out and moves down) */
+@keyframes fadeInAnimation {
+    0% {
+        opacity: 0;
+        transform: translateY(20vh);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.fade-in-section.is-visible {
+    visibility: visible;
+    animation: fadeInAnimation 1.2s ease-out forwards;
+}
+
+.fade-out-section {
+    opacity: 1;
+    transform: translateY(0);
+    visibility: visible;
+    will-change: opacity, transform;
+}
+
+@keyframes fadeOutMoveUp {
+    0% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+    100% {
+        opacity: 0;
+        transform: translateY(20vh);
+    }
+}
+
 .fade-out-section.is-hidden {
     opacity: 0;
-    transform: none;
-    /*visibility: hidden;*/
+    transform: translateY(20vh);
+    visibility: hidden;
+    animation: fadeOutMoveUp 0.6s ease-out forwards;
+}*/
+
+/* Initial state for fade-in sections */
+.fade-in-section {
+    opacity: 0;
+    transform: translateY(20vh);  /* Start 20% below */
+    visibility: hidden;
+    will-change: opacity, transform;
 }
+
+/* Fade-in animation */
+@keyframes fadeInAnimation {
+    0% {
+        opacity: 0;
+        transform: translateY(20vh);  /* Start off-screen */
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);  /* End at normal position */
+    }
+}
+
+/* State when the section is visible (fades in and moves up) */
+.fade-in-section.is-visible {
+    visibility: visible;  /* Make visible */
+    animation: fadeInAnimation 1.2s ease-out forwards;  /* Trigger fade-in animation */
+}
+
+/* Initial state for fade-out sections */
+.fade-out-section {
+    opacity: 1;
+    transform: translateY(0);  /* Start at normal position */
+    visibility: visible;
+    will-change: opacity, transform;
+}
+
+/* Fade-out animation keyframe for .fade-out-section */
+@keyframes fadeOutMoveUp {
+    0% {
+        opacity: 1;
+        transform: translateY(0);  /* Start at normal position */
+    }
+    50% {
+        opacity: 0.5;
+        transform: translateY(10vh); /* Move a little up during the fade */
+    }
+    100% {
+        opacity: 0;
+        transform: translateY(20vh); /* Move completely off-screen */
+        visibility: hidden;
+    }
+}
+
+/* Fade-out state for sections */
+.fade-out-section.is-hidden {
+    animation: fadeOutMoveUp 0.6s ease-out forwards;  /* Trigger fade-out and move up */
+}
+
 
 
 
