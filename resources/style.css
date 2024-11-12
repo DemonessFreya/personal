@@ -26,18 +26,83 @@ body {
 /******************************************************************************************************************************************************************************************************
 /* animations */
 
+/* initial state for fade-in section */
 .fade-in-section {
     opacity: 0;
-    transform: translateY(20vh);
+    transform: translateY(20vh);  /* start 20vh below normal position */
     visibility: hidden;
-    transition: opacity 0.6s ease-out, transform 1.2s ease-out;
-    will-change: opacity, visibility;
+    will-change: opacity, transform;
 }
 
+/* fade-in animation */
+@keyframes fadeInAnimation {
+    0% {
+        opacity: 0;
+        transform: translateY(20vh);  /* start off-screen */
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);  /* end at normal position */
+    }
+}
+
+/* when the section is visible (fades in and moves up) */
 .fade-in-section.is-visible {
+    visibility: visible;  /* make visible */
+    animation: fadeInAnimation 1.2s ease-out forwards;  /* trigger fade-in animation */
+}
+
+/* Initial state for fade-out sections */
+.fade-out-section {
     opacity: 1;
-    transform: none;
+    transform: translateY(0);  /* start at normal position */
     visibility: visible;
+    will-change: opacity, transform;
+}
+
+/* fade-out animation when element exits top of page */
+@keyframes fadeOutFromTop {
+    0% {
+        opacity: 1;
+        transform: translateY(0);  /* start at normal position */
+    }
+    50% {
+        opacity: 0;
+    }
+    90% {
+        transform: translateY(0);
+    }
+    100% {
+        opacity: 0;
+        transform: translateY(20vh); /* move to start position */
+        visibility: hidden;
+    }
+}
+
+/* when the section is hidden */
+.fade-out-section.fade-out-from-top.is-hidden {
+    animation: fadeOutFromTop 0.6s ease-out forwards;  /* trigger fade-out and move up */
+}
+
+/* fade-out animation when element exits bottom of page */
+@keyframes fadeOutFromBottom {
+    0% {
+        opacity: 1;
+        transform: translateY(0);  /* start at normal position */
+    }
+    10% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 0;
+        transform: translateY(20vh); /* move to start position */
+        visibility: hidden;
+    }
+}
+
+/* when the section is hidden */
+.fade-out-section.fade-out-from-bottom.is-hidden {
+    animation: fadeOutFromBottom 0.6s ease-out forwards;  /* trigger fade-out and move down */
 }
 
 
