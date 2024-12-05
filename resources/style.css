@@ -178,6 +178,10 @@ nav a {
     gap: 30px;
 }
 
+.about a {
+    color: #2c3e50;
+}
+
 .about #art {
     flex: 1;
 }
