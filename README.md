@@ -1,7 +1,7 @@
-# Portfolio
+# demoness.dev
 
 ![License](https://img.shields.io/github/license/DemonessFreya/personal?label=License&logo=github&color=red)
 
 ## Description
 
-Personal website for my portfolio and contact information
+my website for portfolio and contact information and maybe other stuff in future :p
