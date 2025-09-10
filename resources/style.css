@@ -226,6 +226,7 @@ nav a {
     list-style: square;
     font-size: 1.9rem;
     margin-left: 1.5rem;
+    margin-bottom: 3rem;
 }
 
 .contact li {
@@ -318,6 +319,17 @@ li {
 
 /******************************************************************************************************************************************************************************************************
 /*queries*/
+
+@media (prefers-color-scheme: dark) {
+    body {
+        background-color: #1a1a1d;
+        color: #f5ebe0;
+    }
+    header {
+        background-color: #17141a;
+        box-shadow: 0 0 5px 0 #9300ff7d;
+    }
+}
 
 @media screen and (max-width: 1675px) {
     body {
